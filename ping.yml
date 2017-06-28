@@ -1,3 +1,10 @@
 ---
-- name: ping test
-  command: ping 127.0.0.1 
+- name: Prepare Setup
+  hosts: all
+  remote_user: root
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: ping test
+      command: ping 127.0.0.1
